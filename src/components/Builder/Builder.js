@@ -13,13 +13,13 @@ import IngChoice from '../IngChoice';
 const Builder = () => {
   const dispatch = useDispatch();
 
-  const toggleIng = ({ id, added }) => {
-    if (added) {
-      dispatch(removeIngredientAC(id));
-      dispatch(toggleAddedAC(id));
+  const toggleIng = (ing) => {
+    if (ing.added) {
+      dispatch(toggleAddedAC(ing.id));
+      dispatch(removeIngredientAC(ing.id));
     } else {
-      dispatch(addIngredientAC(id));
-      dispatch(toggleAddedAC(id));
+      dispatch(toggleAddedAC(ing.id));
+      dispatch(addIngredientAC({ ...ing, added: true }));
     }
   };
 
@@ -45,7 +45,6 @@ const Builder = () => {
             ingredients={ingredients}
             type="topping"
             toggleIng={toggleIng}
-            multiple
           />
         </Route>
       </Switch>

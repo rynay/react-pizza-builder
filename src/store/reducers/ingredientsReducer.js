@@ -9,16 +9,18 @@ const initialState = [{ ...ingredients[0] }];
 export const ingredientsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_INGREDIENT:
-      if (
-        ingredients[action.payload] === 'sauce' ||
-        ingredients[action.payload] === 'cheese'
-      ) {
+      if (state.find((ing) => ing.id === action.payload.id))
         return [
-          ...state.filter((ing) => ing.id !== action.payload),
-          { ...ingredients[action.payload] },
+          ...state.filter((ing) => ing.id !== action.payload.id),
+          { ...action.payload },
+        ];
+      if (action.payload.type === 'sauce' || action.payload.type === 'cheese') {
+        return [
+          ...state.filter((ing) => ing.type !== action.payload.type),
+          { ...action.payload },
         ];
       } else {
-        return [...state, { ...ingredients[action.payload] }];
+        return [...state, { ...action.payload }];
       }
     case REMOVE_INGREDIENT:
       return state.filter((ing) => ing.id !== action.payload);

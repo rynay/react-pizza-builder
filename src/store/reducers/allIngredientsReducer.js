@@ -7,11 +7,30 @@ export const allIngredientsReducer = (state = ingredients, action) => {
       const targetIndex = state.findIndex((ing) => ing.id === action.payload);
       const target = { ...state[targetIndex] };
       target.added = !target.added;
-      return [
-        ...state.slice(0, targetIndex),
-        { ...target },
-        ...state.slice(targetIndex + 1),
-      ];
+      if (
+        target.added &&
+        (target.type === 'sauce' || target.type === 'cheese')
+      ) {
+        return [
+          ...state
+            .slice(0, targetIndex)
+            .map((ing) =>
+              ing.type === target.type ? { ...ing, added: false } : ing
+            ),
+          { ...target },
+          ...state
+            .slice(targetIndex + 1)
+            .map((ing) =>
+              ing.type === target.type ? { ...ing, added: false } : ing
+            ),
+        ];
+      } else {
+        return [
+          ...state.slice(0, targetIndex),
+          { ...target },
+          ...state.slice(targetIndex + 1),
+        ];
+      }
     default:
       return state;
   }

@@ -18,6 +18,9 @@ body {
   padding: 2em;
 
   background: url('./background.jpg');
+  font-family: 'Yatra One', 'Arial Black';
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 img {

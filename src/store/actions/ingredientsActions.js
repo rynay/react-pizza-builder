@@ -1,9 +1,9 @@
 export const ADD_INGREDIENT = 'ADD_INGREDIENT';
 export const REMOVE_INGREDIENT = 'REMOVE_INGREDIENT';
 
-export const addIngredientAC = (id) => ({
+export const addIngredientAC = (ing) => ({
   type: ADD_INGREDIENT,
-  payload: id,
+  payload: ing,
 });
 
 export const removeIngredientAC = (id) => ({

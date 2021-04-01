@@ -1,9 +1,7 @@
-.container {
-  font-family: 'Yatra One', 'Arial Black';
-  font-size: 2rem;
-  font-weight: bold;
-}
-
 .container * {
   font-weight: inherit;
+}
+
+.container ul {
+  list-style-type: none;
 }

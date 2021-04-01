@@ -5,7 +5,7 @@ const ingredients = [
     img: './img/0.png',
     preview: './img/0.1.png',
     type: 'basic',
-    added: false,
+    added: true,
   },
   {
     id: 1,
