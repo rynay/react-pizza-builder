@@ -4,7 +4,9 @@ import {
 } from '../actions/ingredientsActions';
 import ingredients from '../ingredients.js';
 
-export const ingredientsReducer = (state = [], action) => {
+const initialState = [{ ...ingredients[0] }];
+
+export const ingredientsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_INGREDIENT:
       return [...state, ...ingredients[action.payload]];
