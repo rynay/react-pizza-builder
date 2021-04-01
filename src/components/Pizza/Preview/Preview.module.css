@@ -12,3 +12,10 @@
   bottom: 0;
   margin: auto;
 }
+
+@media screen and (min-width: 53em) {
+  .container {
+    height: 35rem;
+    width: 35rem;
+  }
+}

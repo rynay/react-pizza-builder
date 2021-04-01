@@ -1,7 +1,7 @@
 const ingredients = [
   {
     id: 0,
-    name: 'Pan',
+    name: 'Dough',
     img: './img/0.png',
     preview: '',
     type: 'basic',
