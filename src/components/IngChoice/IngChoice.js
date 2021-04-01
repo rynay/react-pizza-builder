@@ -1,8 +1,9 @@
 import Ingredient from '../Ingredient';
+import s from './IngChoice.module.css';
 
 const IngChoice = ({ ingredients, type, toggleIng }) => {
   return (
-    <section>
+    <section className={s.container}>
       {ingredients
         .filter((ing) => ing.type === type)
         .map((ing) => (
