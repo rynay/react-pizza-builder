@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
 import ingredients from '../../store/ingredients';
 import {
   addIngredientAC,
@@ -25,10 +25,18 @@ const Builder = () => {
     }
   };
 
+  const paths = ['/sauce', '/cheese', '/topping'];
+
   return (
-    <section>
+    <section className={s.container}>
       <Switch>
         <Route path="/sauce">
+          <div className={s.navbar}>
+            <h2>Sauce</h2>
+            <Link className={s.next} to="/cheese">
+              Cheese &#8594;
+            </Link>
+          </div>
           <IngChoice
             ingredients={ingredients}
             type="sauce"
@@ -36,6 +44,15 @@ const Builder = () => {
           />
         </Route>
         <Route path="/cheese">
+          <div className={s.navbar}>
+            <Link className={s.back} to="/sauce">
+              &#8592; Sauce
+            </Link>
+            <h2>Cheese</h2>
+            <Link className={s.next} to="/topping">
+              Toppings &#8594;
+            </Link>
+          </div>
           <IngChoice
             ingredients={ingredients}
             type="cheese"
@@ -43,9 +60,31 @@ const Builder = () => {
           />
         </Route>
         <Route path="/topping">
+          <div className={s.navbar}>
+            <Link className={s.back} to="/cheese">
+              &#8592; Cheese
+            </Link>
+            <h2>Toppings</h2>
+            <Link className={s.next} to="/">
+              Checkout $
+            </Link>
+          </div>
           <IngChoice
             ingredients={ingredients}
             type="topping"
+            toggleIng={toggleIng}
+          />
+        </Route>
+        <Route path="*">
+          <div className={s.navbar}>
+            <h2>Sauce</h2>
+            <Link className={s.next} to="/cheese">
+              Cheese &#8594;
+            </Link>
+          </div>
+          <IngChoice
+            ingredients={ingredients}
+            type="sauce"
             toggleIng={toggleIng}
           />
         </Route>

@@ -1,4 +1,35 @@
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  padding: 5rem 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.back:link,
+.back:visited,
+.next:link,
+.next:visited {
+  display: block;
+  text-decoration: none;
+  padding: 0.5em 0;
+  width: 17rem;
+  text-align: center;
+  background-color: rgba(134, 78, 26, 0.75);
+  color: #fff;
+  border-radius: 0.3em;
+}
+
+.back {
+  position: absolute;
+  left: 20rem;
+}
+
+.next {
+  position: absolute;
+  right: 20rem;
 }

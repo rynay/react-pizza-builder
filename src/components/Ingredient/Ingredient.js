@@ -2,7 +2,6 @@ import s from './Ingredient.module.css';
 import React from 'react';
 
 const Ingredient = ({ ing, toggleIng }) => {
-  console.log(ing);
   const toggle = () => {
     toggleIng && toggleIng(ing);
   };

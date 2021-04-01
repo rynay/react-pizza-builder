@@ -3,8 +3,6 @@ import s from './Preview.module.css';
 
 const Preview = () => {
   const ingredients = useSelector((store) => store.ingredients);
-
-  console.log(ingredients);
   return (
     <section className={s.container}>
       {ingredients
