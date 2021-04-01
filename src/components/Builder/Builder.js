@@ -34,7 +34,7 @@ const Builder = () => {
           <div className={s.navbar}>
             <h2>Sauce</h2>
             <Link className={s.next} to="/cheese">
-              Cheese &#8594;
+              <span>Cheese</span> &#8594;
             </Link>
           </div>
           <IngChoice
@@ -46,11 +46,11 @@ const Builder = () => {
         <Route path="/cheese">
           <div className={s.navbar}>
             <Link className={s.back} to="/sauce">
-              &#8592; Sauce
+              &#8592; <span>Sauce</span>
             </Link>
             <h2>Cheese</h2>
             <Link className={s.next} to="/topping">
-              Toppings &#8594;
+              <span>Toppings</span> &#8594;
             </Link>
           </div>
           <IngChoice
@@ -62,11 +62,11 @@ const Builder = () => {
         <Route path="/topping">
           <div className={s.navbar}>
             <Link className={s.back} to="/cheese">
-              &#8592; Cheese
+              &#8592; <span>Cheese</span>
             </Link>
             <h2>Toppings</h2>
             <Link className={s.next} to="/">
-              Checkout $
+              <span>Checkout</span> $
             </Link>
           </div>
           <IngChoice
@@ -79,7 +79,7 @@ const Builder = () => {
           <div className={s.navbar}>
             <h2>Sauce</h2>
             <Link className={s.next} to="/cheese">
-              Cheese &#8594;
+              <span>Cheese</span> &#8594;
             </Link>
           </div>
           <IngChoice

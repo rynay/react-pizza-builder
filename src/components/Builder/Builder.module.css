@@ -16,8 +16,7 @@
 .next:visited {
   display: block;
   text-decoration: none;
-  padding: 0.5em 0;
-  width: 17rem;
+  padding: 0.5em 1.5em;
   text-align: center;
   background-color: rgba(134, 78, 26, 0.75);
   color: #fff;
@@ -32,4 +31,60 @@
 .next {
   position: absolute;
   right: 20rem;
+}
+
+@media screen and (max-width: 75em) {
+  .back {
+    left: 15rem;
+  }
+  .next {
+    right: 15rem;
+  }
+}
+
+@media screen and (max-width: 65em) {
+  .back {
+    left: 10rem;
+  }
+  .next {
+    right: 10rem;
+  }
+}
+
+@media screen and (max-width: 55em) {
+  .back {
+    left: 5rem;
+  }
+  .next {
+    right: 5rem;
+  }
+}
+
+@media screen and (max-width: 45em) {
+  .back {
+    left: 2rem;
+  }
+  .next {
+    right: 2rem;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .back {
+    left: 0rem;
+  }
+  .next {
+    right: 0rem;
+  }
+
+  .back > span,
+  .next > span {
+    display: none;
+  }
+  .back:link,
+  .back:visited,
+  .next:link,
+  .next:visited {
+    padding: 0.5em 1em;
+  }
 }
