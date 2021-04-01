@@ -1,7 +1,14 @@
+.container {
+  width: 100%;
+}
+
 .container * {
   font-weight: inherit;
 }
 
 .container ul {
   list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-rows: min-content;
 }

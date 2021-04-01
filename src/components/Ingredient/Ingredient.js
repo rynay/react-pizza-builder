@@ -7,12 +7,15 @@ const Ingredient = ({ ing, toggleIng }) => {
     toggleIng && toggleIng(ing);
   };
   return (
-    <section className={s.container} onClick={toggle}>
-      <div className={s.image_container}>
+    <section
+      className={toggleIng ? s.container : s.list_container}
+      onClick={toggle}
+    >
+      <div className={toggleIng ? s.image_container : s.small_image_container}>
         <img src={ing.preview} alt="" />
       </div>
       <div className={s.info}>
-        <p>{ing.name}</p>
+        <p className={s.name}>{ing.name}</p>
         <p>$ 0.50</p>
       </div>
     </section>

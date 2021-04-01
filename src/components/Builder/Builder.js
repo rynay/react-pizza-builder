@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import ingredients from '../../store/ingredients';
 import {
@@ -11,15 +11,17 @@ import s from './Builder.module.css';
 import IngChoice from '../IngChoice';
 
 const Builder = () => {
+  const ingredients = useSelector((store) => store.allIngredients);
   const dispatch = useDispatch();
 
   const toggleIng = (ing) => {
-    if (ing.added) {
-      dispatch(toggleAddedAC(ing.id));
-      dispatch(removeIngredientAC(ing.id));
+    const target = ingredients.find((ingredient) => ingredient.id === ing.id);
+    if (target.added) {
+      dispatch(toggleAddedAC(target.id));
+      dispatch(removeIngredientAC(target.id));
     } else {
-      dispatch(toggleAddedAC(ing.id));
-      dispatch(addIngredientAC({ ...ing, added: true }));
+      dispatch(toggleAddedAC(target.id));
+      dispatch(addIngredientAC({ ...target, added: true }));
     }
   };
 
