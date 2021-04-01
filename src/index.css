@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  color: rgb(66, 31, 2);
   font-size: 1.6rem;
   min-height: 100vh;
   padding: 2em;

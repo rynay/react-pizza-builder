@@ -3,8 +3,9 @@ const ingredients = [
     id: 0,
     name: 'Dough',
     img: './img/0.png',
-    preview: '',
+    preview: './img/0.1.png',
     type: 'basic',
+    added: false,
   },
   {
     id: 1,
@@ -12,6 +13,7 @@ const ingredients = [
     img: './img/1.png',
     preview: './img/1.1.png',
     type: 'sauce',
+    added: false,
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const ingredients = [
     img: './img/2.png',
     preview: './img/2.1.png',
     type: 'sauce',
+    added: false,
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ const ingredients = [
     img: './img/3.png',
     preview: './img/3.1.png',
     type: 'sauce',
+    added: false,
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const ingredients = [
     img: './img/4.png',
     preview: './img/4.1.png',
     type: 'sauce',
+    added: false,
   },
   {
     id: 5,
@@ -40,6 +45,7 @@ const ingredients = [
     img: './img/5.png',
     preview: './img/5-6-7.png',
     type: 'cheese',
+    added: false,
   },
   {
     id: 6,
@@ -47,6 +53,7 @@ const ingredients = [
     img: './img/6.png',
     preview: './img/5-6-7.png',
     type: 'cheese',
+    added: false,
   },
   {
     id: 7,
@@ -54,6 +61,7 @@ const ingredients = [
     img: './img/7.png',
     preview: './img/5-6-7.png',
     type: 'cheese',
+    added: false,
   },
   {
     id: 8,
@@ -61,6 +69,7 @@ const ingredients = [
     img: './img/8.png',
     preview: './img/8.1.png',
     type: 'cheese',
+    added: false,
   },
   {
     id: 9,
@@ -68,6 +77,7 @@ const ingredients = [
     img: './img/9.png',
     preview: './img/9-10.png',
     type: 'cheese',
+    added: false,
   },
   {
     id: 10,
@@ -75,6 +85,7 @@ const ingredients = [
     img: './img/10.png',
     preview: './img/9-10.png',
     type: 'cheese',
+    added: false,
   },
 
   {
@@ -83,6 +94,7 @@ const ingredients = [
     img: './img/11.png',
     preview: './img/11.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 12,
@@ -90,6 +102,7 @@ const ingredients = [
     img: './img/12.png',
     preview: './img/12.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 13,
@@ -97,6 +110,7 @@ const ingredients = [
     img: './img/13.png',
     preview: './img/13.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 14,
@@ -104,6 +118,7 @@ const ingredients = [
     img: './img/14.png',
     preview: './img/14.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 15,
@@ -111,6 +126,7 @@ const ingredients = [
     img: './img/15.png',
     preview: './img/15.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 16,
@@ -118,6 +134,7 @@ const ingredients = [
     img: './img/16.png',
     preview: './img/16.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 17,
@@ -125,6 +142,7 @@ const ingredients = [
     img: './img/17.png',
     preview: './img/17.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 18,
@@ -132,6 +150,7 @@ const ingredients = [
     img: './img/18.png',
     preview: './img/18.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 19,
@@ -139,6 +158,7 @@ const ingredients = [
     img: './img/19.png',
     preview: './img/19.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 20,
@@ -146,6 +166,7 @@ const ingredients = [
     img: './img/20.png',
     preview: './img/20.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 21,
@@ -153,6 +174,7 @@ const ingredients = [
     img: './img/21.png',
     preview: './img/21.1.png',
     type: 'topping',
+    added: false,
   },
   {
     id: 22,
@@ -160,6 +182,7 @@ const ingredients = [
     img: './img/22.png',
     preview: './img/22.1.png',
     type: 'topping',
+    added: false,
   },
 ];
 
