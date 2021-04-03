@@ -6,6 +6,7 @@ const ingredients = [
     preview: './img/0.1.png',
     type: 'basic',
     added: true,
+    price: 3,
   },
   {
     id: 1,
@@ -14,6 +15,7 @@ const ingredients = [
     preview: './img/1.1.png',
     type: 'sauce',
     added: false,
+    price: 0.75,
   },
   {
     id: 2,
@@ -22,6 +24,7 @@ const ingredients = [
     preview: './img/2.1.png',
     type: 'sauce',
     added: false,
+    price: 0.6,
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ const ingredients = [
     preview: './img/3.1.png',
     type: 'sauce',
     added: false,
+    price: 0.5,
   },
   {
     id: 4,
@@ -38,6 +42,7 @@ const ingredients = [
     preview: './img/4.1.png',
     type: 'sauce',
     added: false,
+    price: 0.75,
   },
   {
     id: 5,
@@ -46,6 +51,7 @@ const ingredients = [
     preview: './img/5-6-7.png',
     type: 'cheese',
     added: false,
+    price: 1.5,
   },
   {
     id: 6,
@@ -54,6 +60,7 @@ const ingredients = [
     preview: './img/5-6-7.png',
     type: 'cheese',
     added: false,
+    price: 2.0,
   },
   {
     id: 7,
@@ -62,6 +69,7 @@ const ingredients = [
     preview: './img/5-6-7.png',
     type: 'cheese',
     added: false,
+    price: 3.0,
   },
   {
     id: 8,
@@ -70,6 +78,7 @@ const ingredients = [
     preview: './img/8.1.png',
     type: 'cheese',
     added: false,
+    price: 2.5,
   },
   {
     id: 9,
@@ -78,6 +87,7 @@ const ingredients = [
     preview: './img/9-10.png',
     type: 'cheese',
     added: false,
+    price: 3.0,
   },
   {
     id: 10,
@@ -86,6 +96,7 @@ const ingredients = [
     preview: './img/9-10.png',
     type: 'cheese',
     added: false,
+    price: 4.0,
   },
 
   {
@@ -95,6 +106,7 @@ const ingredients = [
     preview: './img/11.1.png',
     type: 'topping',
     added: false,
+    price: 2.5,
   },
   {
     id: 12,
@@ -103,6 +115,7 @@ const ingredients = [
     preview: './img/12.1.png',
     type: 'topping',
     added: false,
+    price: 2.0,
   },
   {
     id: 13,
@@ -111,6 +124,7 @@ const ingredients = [
     preview: './img/13.1.png',
     type: 'topping',
     added: false,
+    price: 0.75,
   },
   {
     id: 14,
@@ -119,6 +133,7 @@ const ingredients = [
     preview: './img/14.1.png',
     type: 'topping',
     added: false,
+    price: 1.0,
   },
   {
     id: 15,
@@ -127,6 +142,7 @@ const ingredients = [
     preview: './img/15.1.png',
     type: 'topping',
     added: false,
+    price: 1.5,
   },
   {
     id: 16,
@@ -135,6 +151,7 @@ const ingredients = [
     preview: './img/16.1.png',
     type: 'topping',
     added: false,
+    price: 1.75,
   },
   {
     id: 17,
@@ -143,6 +160,7 @@ const ingredients = [
     preview: './img/17.1.png',
     type: 'topping',
     added: false,
+    price: 0.75,
   },
   {
     id: 18,
@@ -151,6 +169,7 @@ const ingredients = [
     preview: './img/18.1.png',
     type: 'topping',
     added: false,
+    price: 2.75,
   },
   {
     id: 19,
@@ -159,6 +178,7 @@ const ingredients = [
     preview: './img/19.1.png',
     type: 'topping',
     added: false,
+    price: 1.6,
   },
   {
     id: 20,
@@ -167,6 +187,7 @@ const ingredients = [
     preview: './img/20.1.png',
     type: 'topping',
     added: false,
+    price: 2.6,
   },
   {
     id: 21,
@@ -175,6 +196,7 @@ const ingredients = [
     preview: './img/21.1.png',
     type: 'topping',
     added: false,
+    price: 3.0,
   },
   {
     id: 22,
@@ -183,6 +205,7 @@ const ingredients = [
     preview: './img/22.1.png',
     type: 'topping',
     added: false,
+    price: 2.5,
   },
 ];
 

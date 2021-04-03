@@ -8,35 +8,19 @@ const Ingredients = () => {
     <section className={s.container}>
       <h3>Ingredients:</h3>
       <ul>
-        {ingredients
-          .filter((ing) => ing.type === 'basic')
-          .map((ing) => (
-            <li key={ing.id}>
-              <Ingredient ing={ing} />
-            </li>
-          ))}
-        {ingredients
-          .filter((ing) => ing.type === 'sauce')
-          .map((ing) => (
-            <li key={ing.id}>
-              <Ingredient ing={ing} />
-            </li>
-          ))}
-        {ingredients
-          .filter((ing) => ing.type === 'cheese')
-          .map((ing) => (
-            <li key={ing.id}>
-              <Ingredient ing={ing} />
-            </li>
-          ))}
-        {ingredients
-          .filter((ing) => ing.type === 'topping')
-          .map((ing) => (
-            <li key={ing.id}>
-              <Ingredient ing={ing} />
-            </li>
-          ))}
+        {ingredients.map((ing) => (
+          <li key={ing.id}>
+            <Ingredient ing={ing} />
+          </li>
+        ))}
       </ul>
+      <p className={s.total}>
+        Total:{' '}
+        {ingredients
+          .reduce((acc, ingredient) => acc + ingredient.price, 0)
+          .toFixed(2)}{' '}
+        $
+      </p>
     </section>
   );
 };

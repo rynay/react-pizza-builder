@@ -19,3 +19,7 @@
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-template-rows: min-content;
 }
+
+.total {
+  margin-top: 3rem;
+}

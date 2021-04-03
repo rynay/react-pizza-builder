@@ -18,7 +18,7 @@ const Ingredient = ({ ing, toggleIng }) => {
       </div>
       <div className={s.info}>
         <p className={s.name}>{ing.name}</p>
-        {/* <p>$ 0.50</p> */}
+        <p>$ {ing.price.toFixed(2)}</p>
       </div>
     </section>
   );

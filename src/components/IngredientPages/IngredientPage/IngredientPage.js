@@ -29,7 +29,9 @@ const IngredientPage = ({
             }}
             className={s.next}
             to={
-              currentIngredients.some((ing) => ing.type === type)
+              currentIngredients.some(
+                (ing) => ing.type === type && ing.type !== 'topping'
+              )
                 ? `/${types[i + 1]}`
                 : `/${type}`
             }
