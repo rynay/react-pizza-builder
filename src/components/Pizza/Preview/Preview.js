@@ -2,44 +2,28 @@ import { useSelector } from 'react-redux';
 import s from './Preview.module.css';
 
 const Preview = () => {
-  const allIngredients = useSelector((store) => store.allIngredients);
+  const ingredients = useSelector((store) => store.ingredients);
   return (
     <section className={s.container}>
-      {allIngredients
+      {ingredients
         .filter((ing) => ing.type.includes('basic'))
         .map((ing) => (
           <img key={ing.id} src={ing.img} alt={ing.name} />
         ))}
-
-      {allIngredients
+      {ingredients
         .filter((ing) => ing.type.includes('sauce'))
         .map((ing) => (
-          <img
-            key={ing.id}
-            src={ing.img}
-            alt={ing.name}
-            style={{ display: `${ing.added ? 'block' : 'none'}` }}
-          />
+          <img key={ing.id} src={ing.img} alt={ing.name} />
         ))}
-      {allIngredients
+      {ingredients
         .filter((ing) => ing.type.includes('cheese'))
         .map((ing) => (
-          <img
-            key={ing.id}
-            src={ing.img}
-            alt={ing.name}
-            style={{ display: `${ing.added ? 'block' : 'none'}` }}
-          />
+          <img key={ing.id} src={ing.img} alt={ing.name} />
         ))}
-      {allIngredients
+      {ingredients
         .filter((ing) => ing.type.includes('topping'))
         .map((ing) => (
-          <img
-            key={ing.id}
-            src={ing.img}
-            alt={ing.name}
-            style={{ display: `${ing.added ? 'block' : 'none'}` }}
-          />
+          <img key={ing.id} src={ing.img} alt={ing.name} />
         ))}
     </section>
   );
