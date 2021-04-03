@@ -7,12 +7,14 @@ const IngredientPages = ({
   currentIngredients,
   allIngredients,
   toggleIng,
+  toggleWarning,
 }) => {
   return (
     <Switch>
       {types.map((type, i) => (
         <Route key={i} path={`/${type}`}>
           <IngredientPage
+            toggleWarning={toggleWarning}
             s={styles}
             type={type}
             types={types}

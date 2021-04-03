@@ -2,6 +2,7 @@ import IngChoice from '../../IngChoice';
 import { Link } from 'react-router-dom';
 
 const IngredientPage = ({
+  toggleWarning,
   s,
   type,
   types,
@@ -22,6 +23,10 @@ const IngredientPage = ({
         <h2>{type[0].toUpperCase() + type.slice(1)}</h2>
         {types[i + 1] && (
           <Link
+            onClick={() => {
+              !currentIngredients.some((ing) => ing.type === type) &&
+                toggleWarning(type);
+            }}
             className={s.next}
             to={
               currentIngredients.some((ing) => ing.type === type)

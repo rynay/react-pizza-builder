@@ -8,8 +8,11 @@ import { toggleAddedAC } from '../../store/actions/allIngredientsActions';
 import s from './Builder.module.css';
 
 import IngredientPages from '../IngredientPages';
+import { useState } from 'react';
 
 const Builder = () => {
+  const [currentType, setCurrentType] = useState('');
+  const [isOpenWarning, setIsOpenWarning] = useState(false);
   const ingredients = useSelector((store) => store.allIngredients);
   const currentIngredients = useSelector((store) => store.ingredients);
   const dispatch = useDispatch();
@@ -25,12 +28,24 @@ const Builder = () => {
     }
   };
 
+  const toggleWarning = (type) => {
+    setCurrentType(type);
+    setIsOpenWarning(true);
+    setTimeout(() => {
+      setIsOpenWarning(false);
+    }, 2000);
+  };
+
   const types = ['sauce', 'cheese', 'topping'];
 
   return (
     <section className={s.container}>
+      <div className={`${s.warning} ${isOpenWarning ? s.show_warning : ''}`}>
+        Please choose a {currentType}!
+      </div>
       <Redirect from="/" to="/sauce" />
       <IngredientPages
+        toggleWarning={toggleWarning}
         types={types}
         currentIngredients={currentIngredients}
         allIngredients={ingredients}
