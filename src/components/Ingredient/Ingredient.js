@@ -3,7 +3,6 @@ import React from 'react';
 
 const Ingredient = ({ ing, toggleIng }) => {
   const added = ing.added;
-  console.log(ing.name, ing.added);
   const toggle = () => {
     toggleIng && toggleIng(ing);
   };
@@ -19,7 +18,7 @@ const Ingredient = ({ ing, toggleIng }) => {
       </div>
       <div className={s.info}>
         <p className={s.name}>{ing.name}</p>
-        <p>$ 0.50</p>
+        {/* <p>$ 0.50</p> */}
       </div>
     </section>
   );

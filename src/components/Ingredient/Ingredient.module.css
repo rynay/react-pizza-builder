@@ -48,6 +48,10 @@
   width: 7rem;
 }
 
+.list_container {
+  align-items: flex-start;
+}
+
 .name {
   white-space: nowrap;
 }

@@ -13,7 +13,11 @@ const Preview = ({ location }) => {
         .map((ing) => (
           <img key={ing.id} src={ing.img} alt={ing.name} />
         ))}
-      {(page === 'sauce' ? allIngredients : ingredients)
+      {(page === 'sauce' &&
+      !ingredients.find((item) => item.type === 'sauce' && item.added)
+        ? allIngredients
+        : ingredients
+      )
         .filter((ing) => ing.type.includes('sauce'))
         .map((ing) => (
           <img
@@ -27,7 +31,11 @@ const Preview = ({ location }) => {
             }}
           />
         ))}
-      {(page === 'cheese' ? allIngredients : ingredients)
+      {(page === 'cheese' &&
+      !ingredients.find((item) => item.type === 'cheese' && item.added)
+        ? allIngredients
+        : ingredients
+      )
         .filter((ing) => ing.type.includes('cheese'))
         .map((ing) => (
           <img
@@ -37,11 +45,15 @@ const Preview = ({ location }) => {
             style={{
               display: ing.added ? 'block' : 'none',
               zIndex:
-                ingredients[ingredients.length - 1].img === ing.img ? '2' : '1',
+                ingredients[ingredients.length - 1].img === ing.img ? '1' : '0',
             }}
           />
         ))}
-      {(page === 'topping' ? allIngredients : ingredients)
+      {(page === 'topping' &&
+      !ingredients.find((item) => item.type === 'topping' && item.added)
+        ? allIngredients
+        : ingredients
+      )
         .filter((ing) => ing.type.includes('topping'))
         .map((ing) => (
           <img
@@ -51,7 +63,7 @@ const Preview = ({ location }) => {
             style={{
               display: ing.added ? 'block' : 'none',
               zIndex:
-                ingredients[ingredients.length - 1].img === ing.img ? '3' : '2',
+                ingredients[ingredients.length - 1].img === ing.img ? '1' : '0',
             }}
           />
         ))}
