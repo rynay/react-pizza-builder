@@ -6,10 +6,16 @@
   position: relative;
 }
 
+.back,
+.next,
 .back:link,
 .back:visited,
 .next:link,
 .next:visited {
+  cursor: pointer;
+  border: 0;
+  font-size: inherit;
+  font-family: inherit;
   display: block;
   text-decoration: none;
   padding: 0.5em 1.5em;

@@ -2,11 +2,13 @@ import { useSelector } from 'react-redux';
 import s from './Ingredients.module.css';
 import Ingredient from '../../Ingredient';
 
-const Ingredients = () => {
+const Ingredients = ({ showAlways }) => {
   const ingredients = useSelector((store) => store.ingredients);
   return (
-    <section className={s.container}>
-      <h3>Ingredients:</h3>
+    <section
+      className={!showAlways ? `${s.container} ${s.adaptive}` : s.container}
+    >
+      <h3 className={s.title}>Ingredients:</h3>
       <ul>
         {ingredients.map((ing) => (
           <li key={ing.id}>

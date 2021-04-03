@@ -10,7 +10,7 @@ import s from './Builder.module.css';
 import IngredientPages from '../IngredientPages';
 import { useState } from 'react';
 
-const Builder = () => {
+const Builder = ({ isModalOpen, closeModal, openModal }) => {
   const [currentType, setCurrentType] = useState('');
   const [isOpenWarning, setIsOpenWarning] = useState(false);
   const ingredients = useSelector((store) => store.allIngredients);
@@ -45,6 +45,7 @@ const Builder = () => {
       </div>
       <Redirect from="/" to="/sauce" />
       <IngredientPages
+        openModal={openModal}
         toggleWarning={toggleWarning}
         types={types}
         currentIngredients={currentIngredients}

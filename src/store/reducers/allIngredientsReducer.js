@@ -1,8 +1,17 @@
 import { TOGGLE_ADDED } from '../actions/allIngredientsActions';
+import { REMOVE_ALL_INGREDIENTS } from '../actions/ingredientsActions';
 import ingredients from '../ingredients.js';
 
 export const allIngredientsReducer = (state = ingredients, action) => {
   switch (action.type) {
+    case REMOVE_ALL_INGREDIENTS:
+      return [
+        { ...state[0] },
+        ...state.slice(1).map((ing) => ({
+          ...ing,
+          added: false,
+        })),
+      ];
     case TOGGLE_ADDED:
       const targetIndex = state.findIndex((ing) => ing.id === action.payload);
       const target = { ...state[targetIndex] };

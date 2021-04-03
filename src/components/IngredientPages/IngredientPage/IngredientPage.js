@@ -10,6 +10,7 @@ const IngredientPage = ({
   currentIngredients,
   allIngredients,
   toggleIng,
+  openModal,
 }) => {
   return (
     <>
@@ -39,6 +40,11 @@ const IngredientPage = ({
             <span>{types[i + 1][0].toUpperCase() + types[i + 1].slice(1)}</span>{' '}
             &#8594;
           </Link>
+        )}
+        {type === 'topping' && (
+          <button onClick={openModal} className={s.next}>
+            $ Checkout
+          </button>
         )}
       </div>
       <IngChoice

@@ -1,6 +1,7 @@
 import {
   ADD_INGREDIENT,
   REMOVE_INGREDIENT,
+  REMOVE_ALL_INGREDIENTS,
 } from '../actions/ingredientsActions';
 import ingredients from '../ingredients.js';
 
@@ -37,6 +38,8 @@ export const ingredientsReducer = (state = initialState, action) => {
       }
     case REMOVE_INGREDIENT:
       return state.filter((ing) => ing.id !== action.payload);
+    case REMOVE_ALL_INGREDIENTS:
+      return initialState;
     default:
       return state;
   }

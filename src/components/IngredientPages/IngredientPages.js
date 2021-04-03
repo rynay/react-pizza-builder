@@ -8,12 +8,14 @@ const IngredientPages = ({
   allIngredients,
   toggleIng,
   toggleWarning,
+  openModal,
 }) => {
   return (
     <Switch>
       {types.map((type, i) => (
         <Route key={i} path={`/${type}`}>
           <IngredientPage
+            openModal={openModal}
             toggleWarning={toggleWarning}
             s={styles}
             type={type}
