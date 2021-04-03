@@ -2,12 +2,16 @@ import s from './Ingredient.module.css';
 import React from 'react';
 
 const Ingredient = ({ ing, toggleIng }) => {
+  const added = ing.added;
+  console.log(ing.name, ing.added);
   const toggle = () => {
     toggleIng && toggleIng(ing);
   };
   return (
     <section
-      className={toggleIng ? s.container : s.list_container}
+      className={
+        toggleIng ? `${s.container}  ${added ? s.added : ''}` : s.list_container
+      }
       onClick={toggle}
     >
       <div className={toggleIng ? s.image_container : s.small_image_container}>

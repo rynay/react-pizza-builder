@@ -9,7 +9,6 @@ const initialState = [{ ...ingredients[0] }];
 export const ingredientsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_INGREDIENT:
-      console.log(action);
       if (state.find((ing) => ing.id === action.payload.id))
         return [
           ...state.filter((ing) => ing.id !== action.payload.id),
@@ -24,7 +23,6 @@ export const ingredientsReducer = (state = initialState, action) => {
         return [...state, { ...action.payload }];
       }
     case REMOVE_INGREDIENT:
-      console.log(action);
       return state.filter((ing) => ing.id !== action.payload);
     default:
       return state;
