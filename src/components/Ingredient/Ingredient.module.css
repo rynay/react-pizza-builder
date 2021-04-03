@@ -13,13 +13,16 @@
 }
 
 .image_container {
+  min-width: 10rem;
   width: 10rem;
 }
 .info {
   margin: 0 2rem;
+  flex: 1;
 }
 
 .small_image_container {
+  min-width: 7rem;
   width: 7rem;
 }
 

@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
-import ingredients from '../../store/ingredients';
+import { Switch, Route, Redirect, Link } from 'react-router-dom';
 import {
   addIngredientAC,
   removeIngredientAC,
@@ -12,6 +11,7 @@ import IngChoice from '../IngChoice';
 
 const Builder = () => {
   const ingredients = useSelector((store) => store.allIngredients);
+  const currentIngredients = useSelector((store) => store.ingredients);
   const dispatch = useDispatch();
 
   const toggleIng = (ing) => {
@@ -29,11 +29,19 @@ const Builder = () => {
 
   return (
     <section className={s.container}>
+      <Redirect from="/" to="/sauce" />
       <Switch>
         <Route path="/sauce">
           <div className={s.navbar}>
             <h2>Sauce</h2>
-            <Link className={s.next} to="/cheese">
+            <Link
+              className={s.next}
+              to={
+                currentIngredients.some((ing) => ing.type === 'sauce')
+                  ? '/cheese'
+                  : '/sauce'
+              }
+            >
               <span>Cheese</span> &#8594;
             </Link>
           </div>
@@ -49,7 +57,14 @@ const Builder = () => {
               &#8592; <span>Sauce</span>
             </Link>
             <h2>Cheese</h2>
-            <Link className={s.next} to="/topping">
+            <Link
+              className={s.next}
+              to={
+                currentIngredients.some((ing) => ing.type === 'cheese')
+                  ? '/topping'
+                  : '/cheese'
+              }
+            >
               <span>Toppings</span> &#8594;
             </Link>
           </div>
@@ -65,7 +80,14 @@ const Builder = () => {
               &#8592; <span>Cheese</span>
             </Link>
             <h2>Toppings</h2>
-            <Link className={s.next} to="/">
+            <Link
+              className={s.next}
+              to={
+                currentIngredients.some((ing) => ing.type === 'topping')
+                  ? '/'
+                  : '/topping'
+              }
+            >
               <span>Checkout</span> $
             </Link>
           </div>
@@ -75,7 +97,7 @@ const Builder = () => {
             toggleIng={toggleIng}
           />
         </Route>
-        <Route path="*">
+        {/* <Route path="*">
           <div className={s.navbar}>
             <h2>Sauce</h2>
             <Link className={s.next} to="/cheese">
@@ -87,7 +109,7 @@ const Builder = () => {
             type="sauce"
             toggleIng={toggleIng}
           />
-        </Route>
+        </Route> */}
       </Switch>
     </section>
   );

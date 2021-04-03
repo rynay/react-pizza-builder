@@ -1,6 +1,6 @@
 .container {
   padding: 5rem 2rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 0.5fr));
+  grid-template-columns: repeat(auto-fit, minmax(32.5rem, 0.5fr));
   justify-content: center;
 }
