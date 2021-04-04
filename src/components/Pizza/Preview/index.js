@@ -1,3 +1,3 @@
-import Preview from './Preview';
+import PreviewContainer from './PreviewContainer';
 
-export default Preview;
+export default PreviewContainer;

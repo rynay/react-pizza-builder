@@ -1,11 +1,7 @@
-import { useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import s from './Preview.module.css';
+import ImagesPreloader from '../../ImagesPreloader';
 
-const Preview = ({ location }) => {
-  const page = location.pathname.slice(1);
-  const allIngredients = useSelector((store) => store.allIngredients);
-  const ingredients = useSelector((store) => store.ingredients);
+const Preview = ({ page, ingredients, allIngredients }) => {
   return (
     <section className={s.container}>
       {ingredients
@@ -13,62 +9,15 @@ const Preview = ({ location }) => {
         .map((ing) => (
           <img key={ing.id} src={ing.img} alt={ing.name} />
         ))}
-      {(page === 'sauce' &&
-      !ingredients.find((item) => item.type === 'sauce' && item.added)
-        ? allIngredients
-        : ingredients
-      )
-        .filter((ing) => ing.type.includes('sauce'))
-        .map((ing) => (
-          <img
-            key={ing.id}
-            src={ing.img}
-            alt={ing.name}
-            style={{
-              display: ing.added ? 'block' : 'none',
-              zIndex:
-                ingredients[ingredients.length - 1].img === ing.img ? '1' : '0',
-            }}
-          />
-        ))}
-      {(page === 'cheese' &&
-      !ingredients.find((item) => item.type === 'cheese' && item.added)
-        ? allIngredients
-        : ingredients
-      )
-        .filter((ing) => ing.type.includes('cheese'))
-        .map((ing) => (
-          <img
-            key={ing.id}
-            src={ing.img}
-            alt={ing.name}
-            style={{
-              display: ing.added ? 'block' : 'none',
-              zIndex:
-                ingredients[ingredients.length - 1].img === ing.img ? '1' : '0',
-            }}
-          />
-        ))}
-      {(page === 'topping' &&
-      !ingredients.find((item) => item.type === 'topping' && item.added)
-        ? allIngredients
-        : ingredients
-      )
-        .filter((ing) => ing.type.includes('topping'))
-        .map((ing) => (
-          <img
-            key={ing.id}
-            src={ing.img}
-            alt={ing.name}
-            style={{
-              display: ing.added ? 'block' : 'none',
-              zIndex:
-                ingredients[ingredients.length - 1].img === ing.img ? '1' : '0',
-            }}
-          />
-        ))}
+      <ImagesPreloader
+        {...{
+          page,
+          ingredients,
+          allIngredients,
+        }}
+      />
     </section>
   );
 };
 
-export default withRouter(Preview);
+export default Preview;
