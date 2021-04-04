@@ -10,6 +10,7 @@ const CheckoutContainer = ({ isOpen, close }) => {
   const handleOrder = () => {
     close();
     dispatch(removeAllIngredientsAC());
+    setOrdered(false);
   };
 
   const changeOrdered = () => {
