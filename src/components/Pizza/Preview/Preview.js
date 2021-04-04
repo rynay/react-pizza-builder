@@ -2,6 +2,8 @@ import s from './Preview.module.css';
 import ImagesPreloader from '../../ImagesPreloader';
 
 const Preview = ({ page, ingredients, allIngredients }) => {
+  const targets = ['sauce', 'cheese', 'topping'];
+
   return (
     <section className={s.container}>
       {ingredients
@@ -9,13 +11,18 @@ const Preview = ({ page, ingredients, allIngredients }) => {
         .map((ing) => (
           <img key={ing.id} src={ing.img} alt={ing.name} />
         ))}
-      <ImagesPreloader
-        {...{
-          page,
-          ingredients,
-          allIngredients,
-        }}
-      />
+
+      {targets.map((target, idx) => (
+        <ImagesPreloader
+          key={idx}
+          {...{
+            page,
+            target,
+            ingredients,
+            allIngredients,
+          }}
+        />
+      ))}
     </section>
   );
 };

@@ -1,11 +1,12 @@
-const ImagesPreloader = ({ page, allIngredients, ingredients }) => {
+const ImagesPreloader = ({ page, target, allIngredients, ingredients }) => {
   return (
     <>
-      {(!ingredients.find((item) => item.type === page && item.added)
+      {(target === page &&
+      !ingredients.find((item) => item.type === target && item.added)
         ? allIngredients
         : ingredients
       )
-        .filter((ing) => ing.type.includes(page))
+        .filter((ing) => ing.type === target)
         .map((ing) => (
           <img
             key={ing.id}
