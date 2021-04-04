@@ -1,3 +1,3 @@
-import Builder from './Builder';
+import BuilderContainer from './BuilderContainer';
 
-export default Builder;
+export default BuilderContainer;
