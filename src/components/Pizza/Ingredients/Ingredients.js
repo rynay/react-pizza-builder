@@ -1,9 +1,7 @@
-import { useSelector } from 'react-redux';
 import s from './Ingredients.module.css';
 import Ingredient from '../../Ingredient';
 
-const Ingredients = ({ showAlways }) => {
-  const ingredients = useSelector((store) => store.ingredients);
+const Ingredients = ({ showAlways, ingredients }) => {
   return (
     <section
       className={!showAlways ? `${s.container} ${s.adaptive}` : s.container}

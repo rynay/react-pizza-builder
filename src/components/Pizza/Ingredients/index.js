@@ -1,3 +1,3 @@
-import Ingredients from './Ingredients';
+import IngredientsContainer from './IngredientsContainer';
 
-export default Ingredients;
+export default IngredientsContainer;
